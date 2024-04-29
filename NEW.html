@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style the container holding the textarea */
+    .scroll-box {
+      width: 300px; /* Adjust width as needed */
+      height: 200px; /* Adjust height as needed */
+      overflow-y: scroll; /* Enable vertical scrolling */
+      border: 1px solid #ccc; /* Add border for clarity */
+      padding: 5px; /* Add padding for better appearance */
+    }
+    
+    /* Style the textarea */
+    .scroll-box textarea {
+      width: 100%; /* Occupy full width of container */
+      height: 100%; /* Occupy full height of container */
+      border: none; /* Remove default textarea border */
+      resize: none; /* Prevent resizing */
+    }
+  </style>
+</head>
+<body>
+
+<div class="scroll-box">
+  <textarea rows="4" cols="50">
+    This is a scrollable text area. You can type or paste your text here.
+  </textarea>
+</div>
+
+</body>
+</html>

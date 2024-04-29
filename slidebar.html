@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <title>Sliding Sidebar Menu</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        /* Styling for the main content */
+        main {
+            padding: 2em;
+        }
+        main h1 {
+            text-align: center;
+        }
+        main p {
+            text-align: center;
+        }
+        /* Styles for the sidebar navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Initially hide the sidebar off-screen */
+            width: 250px;
+            height: 100vh; /* Full height of the viewport */
+            background-color: #042331;
+            padding-top: 60px;
+            transition: left 0.3s ease; /* Slide animation duration and easing */
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar header img {
+            max-width: 100%;
+            height: auto;
+        }
+        .open-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 999; /* Ensure the toggle button is above other elements */
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar toggle checkbox and label -->
+<input type="checkbox" id="check">
+<label for="check" class="open-btn">&#9776;</label>
+
+<!-- Sidebar navigation -->
+<nav class="sidebar">
+    <header>
+        <img src="banner.jpg" height="200" width="100%" alt="Banner Image">
+    </header>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <label for="check" class="close-btn">&times;</label>
+</nav>
+
+<!-- Main content area -->
+<main>
+    <h1></h1>
+    <p></p>
+</main>
+
+<script>
+    // JavaScript to toggle sidebar
+    const openBtn = document.querySelector('.open-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const checkbox = document.getElementById('check');
+
+    openBtn.addEventListener('click', () => {
+        sidebar.style.left = '0';
+        checkbox.checked = true;
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.style.left = '-250px';
+        checkbox.checked = false;
+    });
+</script>
+
+</body>
+</html>

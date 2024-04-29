@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Barrier Effect</title>
+<style>
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .barrier {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .container:hover .barrier {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://scontent.fdvo2-1.fna.fbcdn.net/v/t1.15752-9/418701017_1119393409264313_8950186367231872778_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGF8gociDlrA1pMq-N96kqRZfwcSGr9XlZl_BxIav1eVu6kVn78XscfcyompZM6N6TTf3bAlX80DuFu_wHXbcJA&_nc_ohc=uZFzfOvzUZUAX9-bA8c&_nc_ht=scontent.fdvo2-1.fna&oh=03_AdT7QlnskuYpcaIkAz2FJmmoGYSXAGkmlSYmSS8sNBUT8g&oe=66278F0E" alt="Image 1">
+  <div class="barrier">GRADE 8 BUILDINGS</div>
+</div>
+
+<div class="container">
+  <img src="image2.jpg" alt="Image 2">
+  <div class="barrier">Hover to Reveal</div>
+</div>
+
+<!-- Add more images with barriers as needed -->
+
+</body>
+</html>
